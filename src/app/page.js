@@ -142,7 +142,7 @@ export default function Home() {
         href="https://wa.me/5511949391753?text=Ol%C3%A1%2C%20quero%20mais%20informações%20sobre%20o%20t%C3%B4nico"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 w-22 h-22 bg-green-500 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition z-50"
+        className="hidden sm:block fixed bottom-6 right-6 w-22 h-22 bg-green-500 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition z-50"
       >
         {/* Ícone WhatsApp SVG */}
         <img
