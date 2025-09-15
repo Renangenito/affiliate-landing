@@ -5,7 +5,7 @@ export default function Home() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
-  // Facebook Pixel (Meta Pixel)
+  // Facebook Pixel
   useEffect(() => {
     !(function (f, b, e, v, n, t, s) {
       if (f.fbq) return;
@@ -31,16 +31,30 @@ export default function Home() {
       "https://connect.facebook.net/en_US/fbevents.js"
     );
 
-    fbq("init", "SUA_PIXEL_ID_AQUI"); // substitua pelo seu Pixel ID
+    fbq("init", "SUA_PIXEL_ID_AQUI");
     fbq("track", "PageView");
   }, []);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("E-mail capturado:", email);
-    setSubmitted(true);
-    if (typeof fbq !== "undefined") {
-      fbq("track", "Lead", { email });
+    try {
+      const res = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      if (res.ok) {
+        setSubmitted(true);
+        if (typeof fbq !== "undefined") {
+          fbq("track", "Lead", { email });
+        }
+      } else {
+        alert("Erro ao enviar e-mail, tente novamente.");
+      }
+    } catch (err) {
+      console.error(err);
+      alert("Falha na conexão.");
     }
   };
 
@@ -49,12 +63,18 @@ export default function Home() {
       className="min-h-screen flex flex-col items-center justify-center p-6"
       style={{
         backgroundColor: "#ffdce8ff",
-        //backgroundImage: "url('/teste')",
         backgroundRepeat: "repeat",
         backgroundPosition: "center",
         backgroundSize: "200px",
       }}
     >
+      <div className="mb-4 flex items-center space-x-2 bg-green-100 text-green-700 px-3 py-1 rounded-full w-fit text-sm">
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+        <span>Site 100% Seguro</span>
+      </div>
+
       {/* Header */}
       <header className="text-center mb-12 bg-[#ffdce8ff]">
         <img
@@ -65,7 +85,7 @@ export default function Home() {
         <h1 className="text-4xl font-bold mb-4 text-[#e15e31]">
           Tônico Capilar Poderoso
         </h1>
-        <p className="text-lg text-black max-w-2xl mx-auto">
+        <p className="text-xl text-black max-w-2xl mx-auto">
           Recupera, fortalece e acelera o crescimento dos fios. Ideal para
           mulheres que querem cabelos mais <strong>fortes, longos e saudáveis</strong>.
         </p>
@@ -76,7 +96,7 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4 text-[#4d8840]">
           Por que escolher o Tônico?
         </h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-700">
+        <ul className="list-disc list-inside space-y-2 text-gray-700 text-xl">
           <li>✅ Estimula o crescimento acelerado dos fios</li>
           <li>✅ Reduz a queda e fortalece a raiz</li>
           <li>✅ Fórmula natural, dermatologicamente testada</li>
@@ -99,10 +119,9 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="bg-[#e15e31] p-8 rounded-2xl shadow-lg max-w-xl w-full text-center text-white">
+      <section className="border border-[#4d8840] bg-[#e15e31] p-8 rounded-2xl shadow-lg max-w-xl w-full text-center text-white">
         <h2 className="text-2xl font-semibold mb-4">Garanta já o seu!</h2>
 
-        {/* Formulário de e-mail */}
         {!submitted && (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 mb-4">
             <input
@@ -123,7 +142,6 @@ export default function Home() {
           </form>
         )}
 
-        {/* Botão Loja Oficial */}
         {submitted && (
           <a
             href="https://pay.goold.club/aff/R841JA/V151TAGR"
@@ -137,19 +155,14 @@ export default function Home() {
         )}
       </section>
 
-      {/* Botão flutuante do WhatsApp */}
+      {/* WhatsApp */}
       <a
         href="https://wa.me/5511949391753?text=Ol%C3%A1%2C%20quero%20mais%20informações%20sobre%20o%20t%C3%B4nico"
         target="_blank"
         rel="noopener noreferrer"
         className="hidden sm:block fixed bottom-6 right-6 w-22 h-22 bg-green-500 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition z-50"
       >
-        {/* Ícone WhatsApp SVG */}
-        <img
-          src="/whatsapp.svg" // caminho relativo à pasta public
-          alt="WhatsApp"
-          className=""
-        />
+        <img src="/whatsapp.svg" alt="WhatsApp" />
       </a>
       <a
         href="https://wa.me/5511949391753?text=Ol%C3%A1%2C%20quero%20mais%20informações%20sobre%20o%20t%C3%B4nico"
