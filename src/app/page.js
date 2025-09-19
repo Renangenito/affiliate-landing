@@ -77,13 +77,16 @@ export default function Home() {
 
       {/* Header */}
       <header className="text-center mb-12 bg-[#ffdce8ff]">
-        <img
-          src="/fernanda-perfil.jpg"
-          alt="Afiliada"
-          className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#4d8840]"
-        />
-        <h1 className="text-4xl font-bold mb-4 text-[#e15e31]">
-          Tônico Capilar Poderoso
+        <div className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#4d8840] overflow-hidden">
+          <img
+            src="/perfil-1.jpeg"
+            alt="Afiliada"
+            className="w-24 h-24 object-cover object-center"
+          />
+        </div>
+
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#e15e31] flex flex-col h-24">
+          Tônico Poderoso<span className="md:ml-75 text-base underline">tônico capilar</span>
         </h1>
         <p className="text-xl text-black max-w-2xl mx-auto">
           Recupera, fortalece e acelera o crescimento dos fios. Ideal para
