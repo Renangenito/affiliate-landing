@@ -77,25 +77,34 @@ export default function Home() {
 
       {/* Header */}
       <header className="text-center mb-12 bg-[#ffdce8ff]">
-        <div className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-[#4d8840] overflow-hidden">
+        <div className=" w-24 h-24 md:w-50 md:h-50 rounded-full mx-auto mb-4 border-4 border-[#4d8850] overflow-hidden">
           <img
             src="/perfil-1.jpeg"
-            alt="Afiliada"
-            className="w-24 h-24 object-cover object-center"
+            alt="Foto de perfil da pessoa mulher afiliada"
+            className="w-24 h-24 md:w-50 md:h-50  object-cover object-center"
           />
         </div>
-
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#e15e31] flex flex-col h-24">
           Tônico Poderoso<span className="md:ml-75 text-base underline">tônico capilar</span>
         </h1>
-        <p className="text-xl text-black max-w-2xl mx-auto">
-          Recupera, fortalece e acelera o crescimento dos fios. Ideal para
-          mulheres que querem cabelos mais <strong>fortes, longos e saudáveis</strong>.
-        </p>
+        <section className="flex flex-col items-center bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full border border-l-8 border-r-8 border-[#4d8840]">
+          <h2 className=" text-2xl font-semibold mb-4 text-[#e15e31]">
+            Quais os benefícios do Tônico?
+          </h2>
+          <img
+            src="/tonico.png"
+            alt="Imagem da embalagem do produto Tônico poderoso"
+            className="w-24 h-70 md:w-50 md:h-70 object-cover object-center"
+          />
+          <p className="text-xl text-black max-w-2xl mx-auto">
+            Recupera, fortalece e acelera o crescimento dos fios. Ideal para
+            mulheres que querem cabelos mais <strong>fortes, longos e saudáveis✨</strong>.
+          </p>
+        </section>
       </header>
 
       {/* Benefícios */}
-      <section className="bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full mb-8 border border-l-8 border-[#e15e31]">
+      <section className="bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full mb-13 border border-l-8 border-r-8 border-[#e15e31]">
         <h2 className="text-2xl font-semibold mb-4 text-[#4d8840]">
           Por que escolher o Tônico?
         </h2>
@@ -108,14 +117,14 @@ export default function Home() {
       </section>
 
       {/* Depoimentos */}
-      <section className="bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full mb-8 border border-l-8 border-[#4d8840]">
+      <section className="bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full mb-8 border border-l-8 border-r-8 border-[#4d8840]">
         <h2 className="text-2xl font-semibold mb-4 text-[#e15e31]">
           Mulheres reais, resultados reais
         </h2>
         <div className="space-y-4 text-gray-700 italic">
           <img
             src="/depoimentos-tonico.png"
-            alt="Depoimentos"
+            alt="Depoimentos de possas reais em print"
             className="mx-auto mb-4 border-4 border-[#4d8840] rounded-2xl"
           />
         </div>
