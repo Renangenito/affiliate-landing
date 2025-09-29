@@ -1,39 +1,9 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
-
-  // Facebook Pixel
-  useEffect(() => {
-    !(function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () {
-        n.callMethod
-          ? n.callMethod.apply(n, arguments)
-          : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n;
-      n.push = n;
-      n.loaded = !0;
-      n.version = "2.0";
-      n.queue = [];
-      t = b.createElement(e);
-      t.async = !0;
-      t.src = v;
-      s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    })(
-      window,
-      document,
-      "script",
-      "https://connect.facebook.net/en_US/fbevents.js"
-    );
-
-    fbq("init", "SUA_PIXEL_ID_AQUI");
-    fbq("track", "PageView");
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -46,7 +16,7 @@ export default function Home() {
 
       if (res.ok) {
         setSubmitted(true);
-        if (typeof fbq !== "undefined") {
+        if (typeof window !== "undefined" && typeof fbq !== "undefined") {
           fbq("track", "Lead", { email });
         }
       } else {
@@ -69,8 +39,18 @@ export default function Home() {
       }}
     >
       <div className="mb-4 flex items-center space-x-2 bg-green-100 text-green-700 px-3 py-1 rounded-full w-fit text-sm">
-        <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+        <svg
+          className="w-4 h-4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M5 13l4 4L19 7"
+          />
         </svg>
         <span>Site 100% Seguro</span>
       </div>
@@ -85,7 +65,8 @@ export default function Home() {
           />
         </div>
         <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#e15e31] flex flex-col h-24">
-          Tônico Poderoso<span className="md:ml-75 text-base underline">tônico capilar</span>
+          Tônico Poderoso
+          <span className="md:ml-75 text-base underline">Tônico capilar</span>
         </h1>
         <section className="flex flex-col items-center bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full border border-l-8 border-r-8 border-[#4d8840]">
           <h2 className=" text-2xl font-semibold mb-4 text-[#e15e31]">
@@ -98,7 +79,8 @@ export default function Home() {
           />
           <p className="text-xl text-black max-w-2xl mx-auto">
             Recupera, fortalece e acelera o crescimento dos fios. Ideal para
-            mulheres que querem cabelos mais <strong>fortes, longos e saudáveis✨</strong>.
+            mulheres que querem cabelos mais{" "}
+            <strong>fortes, longos e saudáveis✨</strong>.
           </p>
         </section>
       </header>
@@ -160,7 +142,14 @@ export default function Home() {
             target="_blank"
             rel="noopener noreferrer"
             className="bg-yellow-400 text-black font-bold p-3 rounded-lg hover:bg-yellow-500 transition inline-block w-full text-center mt-4"
-            onClick={() => fbq("track", "Purchase")}
+            onClick={() => {
+              if (
+                typeof window !== "undefined" &&
+                typeof fbq !== "undefined"
+              ) {
+                fbq("track", "Purchase");
+              }
+            }}
           >
             Ir para a Loja Oficial
           </a>
@@ -169,7 +158,7 @@ export default function Home() {
 
       {/* WhatsApp */}
       <a
-        href="https://wa.me/5511949391753?text=Ol%C3%A1%2C%20quero%20mais%20informações%20sobre%20o%20t%C3%B4nico"
+        href="https://wa.me/5511943887334?text=Ol%C3%A1%2C%20quero%20mais%20informações%20sobre%20o%20t%C3%B4nico"
         target="_blank"
         rel="noopener noreferrer"
         className="hidden sm:block fixed bottom-6 right-6 w-22 h-22 bg-green-500 rounded-full shadow-lg flex items-center justify-center hover:bg-green-600 transition z-50"
@@ -177,7 +166,7 @@ export default function Home() {
         <img src="/whatsapp.svg" alt="WhatsApp" />
       </a>
       <a
-        href="https://wa.me/5511949391753?text=Ol%C3%A1%2C%20quero%20mais%20informações%20sobre%20o%20t%C3%B4nico"
+        href="https://wa.me/5511943887334?text=Ol%C3%A1%2C%20quero%20mais%20informações%20sobre%20o%20t%C3%B4nico"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-4  bg-green-500 text-white font-bold p-3 rounded-lg hover:bg-green-600 transition flex-1 text-center"
