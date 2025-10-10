@@ -38,7 +38,7 @@ export default function Home() {
         backgroundSize: "200px",
       }}
     >
-      <div className="mb-4 flex items-center space-x-2 bg-green-100 text-green-700 px-3 py-1 rounded-full w-fit text-sm">
+      <div className="text-[#d64d87] mb-4 flex items-center space-x-2 bg-green-100 px-3 py-1 rounded-full w-fit text-sm">
         <svg
           className="w-4 h-4"
           fill="none"
@@ -57,25 +57,25 @@ export default function Home() {
 
       {/* Header */}
       <header className="text-center mb-12 bg-[#ffdce8ff]">
-        <div className=" w-24 h-24 md:w-50 md:h-50 rounded-full mx-auto mb-4 border-4 border-[#4d8850] overflow-hidden">
+        <div className=" w-24 h-24 md:w-50 md:h-50 rounded-full mx-auto mb-4 border-4 border-[#d64d87] overflow-hidden">
           <img
-            src="/perfil-1.jpeg"
+            src="/cronograma_capilar_fashion_gold.png"
             alt="Foto de perfil da pessoa mulher afiliada"
             className="w-24 h-24 md:w-50 md:h-50  object-cover object-center"
           />
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#e15e31] flex flex-col h-24">
-          Tônico Poderoso
-          <span className="md:ml-75 text-base underline">Tônico capilar</span>
+        <h1 className="text-4xl md:text-5xl font-bold mb-4 text-[#d64d87] flex flex-col h-24">
+        Cronograma Capilar 
+          <span className="md:ml-75 text-base underline">Fashion Gold</span>
         </h1>
-        <section className="flex flex-col items-center bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full border border-l-8 border-r-8 border-[#4d8840]">
-          <h2 className=" text-2xl font-semibold mb-4 text-[#e15e31]">
-            Quais os benefícios do Tônico?
+        <section className="flex flex-col items-center bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full border border-l-8 border-r-8 border-[#d64d87]">
+          <h2 className=" text-2xl font-semibold mb-4 text-[#d64d87]">
+            Quais os benefícios do Cronograma?
           </h2>
           <img
-            src="/tonico.png"
+            src="/cronograma_capilar_fashion_gold.png"
             alt="Imagem da embalagem do produto Tônico poderoso"
-            className="w-24 h-70 md:w-50 md:h-70 object-cover object-center"
+            className="w-72 h-70 md:w-80 md:h-70 object-cover object-center"
           />
           <p className="text-xl text-black max-w-2xl mx-auto">
             Recupera, fortalece e acelera o crescimento dos fios. Ideal para
@@ -87,8 +87,8 @@ export default function Home() {
 
       {/* Benefícios */}
       <section className="bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full mb-13 border border-l-8 border-r-8 border-[#e15e31]">
-        <h2 className="text-2xl font-semibold mb-4 text-[#4d8840]">
-          Por que escolher o Tônico?
+        <h2 className="text-2xl font-semibold mb-4 text-[#e15e31]">
+          Por que escolher o Cronograma Fashion Gold?
         </h2>
         <ul className="list-disc list-inside space-y-2 text-gray-700 text-xl">
           <li>✅ Estimula o crescimento acelerado dos fios</li>
@@ -99,21 +99,21 @@ export default function Home() {
       </section>
 
       {/* Depoimentos */}
-      <section className="bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full mb-8 border border-l-8 border-r-8 border-[#4d8840]">
-        <h2 className="text-2xl font-semibold mb-4 text-[#e15e31]">
+      <section className="bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full mb-8 border border-l-8 border-r-8 border-[#d64d87]">
+        <h2 className="text-2xl font-semibold mb-4 text-[#d64d87]">
           Mulheres reais, resultados reais
         </h2>
         <div className="space-y-4 text-gray-700 italic">
           <img
-            src="/depoimentos-tonico.png"
+            src="/"
             alt="Depoimentos de possas reais em print"
-            className="mx-auto mb-4 border-4 border-[#4d8840] rounded-2xl"
+            className="mx-auto mb-4 border-4 border-[#d64d87] rounded-2xl"
           />
         </div>
       </section>
 
       {/* CTA */}
-      <section className="border border-[#4d8840] bg-[#e15e31] p-8 rounded-2xl shadow-lg max-w-xl w-full text-center text-white">
+      <section className="border border-[#FFFFFF] bg-[#4c62a8] p-8 rounded-2xl shadow-lg max-w-xl w-full text-center text-white">
         <h2 className="text-2xl font-semibold mb-4">Garanta já o seu!</h2>
 
         {!submitted && (
@@ -129,7 +129,7 @@ export default function Home() {
 
             <button
               type="submit"
-              className="bg-emerald-600 text-white font-semibold p-3 rounded-lg cursor-pointer hover:bg-emerald-500 transition"
+              className="bg-[#d64d87] text-white font-semibold p-3 rounded-lg cursor-pointer hover:bg-emerald-500 transition"
             >
               Quero Receber o Link de Compra
             </button>
