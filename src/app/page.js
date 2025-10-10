@@ -78,9 +78,8 @@ export default function Home() {
             className="w-72 h-70 md:w-80 md:h-70 object-cover object-center"
           />
           <p className="text-xl text-black max-w-2xl mx-auto">
-            Recupera, fortalece e acelera o crescimento dos fios. Ideal para
-            mulheres que querem cabelos mais{" "}
-            <strong>fortes, longos e saudáveis✨</strong>.
+            <strong>Kit 3 em 1:</strong> Hidrata, nutre e reconstrói em minutos, que cuida de todas as camadas do fio, deixando os cabelos mais{" "}
+            <strong>sedosos e radiantes✨💫</strong>.
           </p>
         </section>
       </header>
@@ -90,16 +89,16 @@ export default function Home() {
         <h2 className="text-2xl font-semibold mb-4 text-[#e15e31]">
           Por que escolher o Cronograma Fashion Gold?
         </h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-700 text-xl">
-          <li>✅ Estimula o crescimento acelerado dos fios</li>
-          <li>✅ Reduz a queda e fortalece a raiz</li>
-          <li>✅ Fórmula natural, dermatologicamente testada</li>
-          <li>✅ Resultados visíveis em poucas semanas</li>
+        <ul className=" list-inside space-y-2 text-gray-700 text-xl">
+          <li>✅ Cuida profundamente dos fios</li>
+          <li>✅ Devolve brilho, maciez e vitalidade ao cabelo</li>
+          <li>✅ Tratamento completo para todas as camadas do fio</li>
+          <li>✅ Resultados imediatos — cabelos sedosos desde a primeira aplicação</li>
         </ul>
       </section>
 
       {/* Depoimentos */}
-      <section className="bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full mb-8 border border-l-8 border-r-8 border-[#d64d87]">
+      {/* <section className="bg-white p-8 rounded-2xl shadow-lg max-w-xl w-full mb-8 border border-l-8 border-r-8 border-[#d64d87]">
         <h2 className="text-2xl font-semibold mb-4 text-[#d64d87]">
           Mulheres reais, resultados reais
         </h2>
@@ -110,26 +109,26 @@ export default function Home() {
             className="mx-auto mb-4 border-4 border-[#d64d87] rounded-2xl"
           />
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
-      <section className="border border-[#FFFFFF] bg-[#4c62a8] p-8 rounded-2xl shadow-lg max-w-xl w-full text-center text-white">
-        <h2 className="text-2xl font-semibold mb-4">Garanta já o seu!</h2>
+      <section className="border border-l-8 border-r-8 border-b-8 border-[#e0196d] bg-[#FFFFFF] p-8 rounded-2xl shadow-lg max-w-xl w-full text-center text-white">
+        <h2 className="text-[#e0196d] text-2xl font-semibold mb-4">Garanta já o seu!</h2>
 
         {!submitted && (
           <form onSubmit={handleSubmit} className="flex flex-col gap-4 mb-4">
             <input
               type="email"
-              placeholder="Digite seu melhor e-mail"
+              placeholder="Digite seu e-mail aqui"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="p-3 border rounded-lg w-full text-black border-white placeholder-white"
+              className="p-3 border rounded-lg w-full text-black border-[#e0196d] placeholder-[#e0196d]"
               required
             />
 
             <button
               type="submit"
-              className="bg-[#d64d87] text-white font-semibold p-3 rounded-lg cursor-pointer hover:bg-emerald-500 transition"
+              className="bg-[#e0196d] text-white font-semibold p-3 rounded-lg cursor-pointer hover:bg-[#f34991] transition"
             >
               Quero Receber o Link de Compra
             </button>
